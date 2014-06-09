@@ -2,9 +2,9 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width; initial-scale=1.5; user-scalable=no;">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+		<meta name="odio-sound-url" content="http://www.jplayer.org/audio/m4a/Miaow-07-Bubble.m4a">
 		<title>jPlayer - Circle Player</title>
-
 		<!-- build:css styles/odio.css -->
 		<link rel="stylesheet" href="css/not.the.skin.css">
 		<link rel="stylesheet" href="circle.skin/circle.player.css">
@@ -50,25 +50,24 @@
 
 		<script type="text/javascript">
 		$(document).ready(function(){
+			var soundUrl = $("meta[name=odio-sound-url]").attr("content");
+			var extension = soundUrl.match(/\.[a-z0-9]{3}$/ig);
 
-			/*
-			 * Instance CirclePlayer inside jQuery doc ready
-			 *
-			 * CirclePlayer(jPlayerSelector, media, options)
-			 *   jPlayerSelector: String - The css selector of the jPlayer div.
-			 *   media: Object - The media object used in jPlayer("setMedia",media).
-			 *   options: Object - The jPlayer options.
-			 *
-			 * Multiple instances must set the cssSelectorAncestor in the jPlayer options. Defaults to "#cp_container_1" in CirclePlayer.
-			 */
+			if(extension){
+				extension = extension[0];
+				extension = extension.substring(1, extension.length);
+			}
 
-			var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
-			{
-				m4a: "http://www.jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
-				oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
-			}, {
-				cssSelectorAncestor: "#cp_container_1"
-			});
+			var playerOptions = {};
+			playerOptions[extension] = soundUrl;
+
+			var myCirclePlayer = new CirclePlayer(
+				"#jquery_jplayer_1", 
+				playerOptions, 
+				{
+					cssSelectorAncestor: "#cp_container_1"
+				}
+			);
 		});
 		</script>
 		
