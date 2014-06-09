@@ -7,48 +7,6 @@
 
 		<link rel="stylesheet" href="css/not.the.skin.css">
 		<link rel="stylesheet" href="circle.skin/circle.player.css">
-
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script type="text/javascript" src="js/jquery.transform2d.js"></script>
-		<script type="text/javascript" src="js/jquery.grab.js"></script>
-		<script type="text/javascript" src="js/jquery.jplayer.js"></script>
-		<script type="text/javascript" src="js/mod.csstransforms.min.js"></script>
-		<script type="text/javascript" src="js/circle.player.js"></script>
-		<!--<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>-->
-
-		<script type="text/javascript">
-		$(document).ready(function(){
-
-			/*
-			 * Instance CirclePlayer inside jQuery doc ready
-			 *
-			 * CirclePlayer(jPlayerSelector, media, options)
-			 *   jPlayerSelector: String - The css selector of the jPlayer div.
-			 *   media: Object - The media object used in jPlayer("setMedia",media).
-			 *   options: Object - The jPlayer options.
-			 *
-			 * Multiple instances must set the cssSelectorAncestor in the jPlayer options. Defaults to "#cp_container_1" in CirclePlayer.
-			 */
-
-			var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
-			{
-				m4a: "http://www.jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
-				oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
-			}, {
-				cssSelectorAncestor: "#cp_container_1"
-			});
-
-			// This code creates a 2nd instance. Delete if not required.
-
-			var myOtherOne = new CirclePlayer("#jquery_jplayer_2",
-			{
-				m4a:"http://www.jplayer.org/audio/m4a/Miaow-04-Lismore.m4a",
-				oga:"http://www.jplayer.org/audio/ogg/Miaow-04-Lismore.ogg"
-			}, {
-				cssSelectorAncestor: "#cp_container_2"
-			});
-		});
-		</script>
 	</head>
 	<body>
 
@@ -98,5 +56,47 @@
 			</div>
 
 		</div>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.transform2d.js"></script>
+		<script type="text/javascript" src="js/jquery.grab.js"></script>
+		<script type="text/javascript" src="js/jquery.jplayer.js"></script>
+		<script type="text/javascript" src="js/mod.csstransforms.min.js"></script>
+		<script type="text/javascript" src="js/circle.player.js"></script>
+		
+		<script type="text/javascript">
+		$(document).ready(function(){
+
+			/*
+			 * Instance CirclePlayer inside jQuery doc ready
+			 *
+			 * CirclePlayer(jPlayerSelector, media, options)
+			 *   jPlayerSelector: String - The css selector of the jPlayer div.
+			 *   media: Object - The media object used in jPlayer("setMedia",media).
+			 *   options: Object - The jPlayer options.
+			 *
+			 * Multiple instances must set the cssSelectorAncestor in the jPlayer options. Defaults to "#cp_container_1" in CirclePlayer.
+			 */
+
+			var myCirclePlayer = new CirclePlayer("#jquery_jplayer_1",
+			{
+				m4a: "http://www.jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
+				oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+			}, {
+				cssSelectorAncestor: "#cp_container_1"
+			});
+
+			// This code creates a 2nd instance. Delete if not required.
+
+			var myOtherOne = new CirclePlayer("#jquery_jplayer_2",
+			{
+				m4a:"http://www.jplayer.org/audio/m4a/Miaow-04-Lismore.m4a",
+				oga:"http://www.jplayer.org/audio/ogg/Miaow-04-Lismore.ogg"
+			}, {
+				cssSelectorAncestor: "#cp_container_2"
+			});
+		});
+		</script>
+		
 	</body>
 </html>
