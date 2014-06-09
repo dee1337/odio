@@ -10,11 +10,23 @@
  * Date: 6th May 2011
  */
 
+html, body {
+	height: 100%;
+}
+
 body {
 	background-color:#f0f0f0;
+	min-height: 100%;
+	margin: 0; 
+	padding: 0;
 } 
 
 .prototype-wrapper {
 	width:200px;
 	margin: 0 auto;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
