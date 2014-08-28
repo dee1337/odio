@@ -43,7 +43,8 @@ var CirclePlayer = function(jPlayerSelector, media, options) {
 			cssSelector: {
 				play: ".cp-play",
 				pause: ".cp-pause"
-			}
+			},
++			autoPlay: false
 		},
 
 		cssSelector = {
@@ -96,6 +97,9 @@ CirclePlayer.prototype = {
 			}
 			$(this).jPlayer("setMedia", self.media);
 			self._initCircleControl();
+			if(self.options.autoPlay) {
++				$(this).jPlayer("play");
++			}
 		});
 
 		this.player.bind($.jPlayer.event.play + this.eventNamespace, function(event) {
